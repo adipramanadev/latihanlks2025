@@ -13,7 +13,8 @@ class CategoryController extends Controller
     public function index()
     {
         //
-        return view('admin.master');
+        $category = Category::all();
+        return view('admin.category.index', compact('category'));
     }
 
     /**
@@ -22,6 +23,7 @@ class CategoryController extends Controller
     public function create()
     {
         //
+        return view('admin.category.create');
     }
 
     /**
@@ -30,6 +32,14 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'name' => 'required',
+        ]);
+        $category = New Category;
+        $category->name = $request->name;
+        $category->save();
+
+        return redirect()->route('category.index')->with('success', 'Category created successfully');
     }
 
     /**
@@ -43,24 +53,33 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Category $category)
+    public function edit($id)
     {
         //
+        $category = Category::find($id); 
+        return view('admin.category.edit', compact('category'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, $id)
     {
         //
+        $category = Category::find($id);
+        $category->name = $request->name;
+        $category->save();
+        return redirect()->route('category.index')->with('success', 'Category updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Category $category)
+    public function destroy($id)
     {
         //
+        $category = Category::find($id);
+        $category->delete();
+        return redirect()->route('category.index')->with('success', 'Category deleted successfully');
     }
 }

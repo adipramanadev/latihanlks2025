@@ -10,4 +10,5 @@ Route::get('/', function () {
 
 
 Route::resource('category', CategoryController::class);
+Route::get('category/delete/{id}', [CategoryController::class,'destroy'])->name('category.destroy');
 Route::resource('product', ProductController::class);
