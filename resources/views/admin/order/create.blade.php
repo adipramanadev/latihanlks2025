@@ -117,8 +117,7 @@
                             </div>
 
                             <button class="btn btn-primary btn-block">Checkout</button>
-                            <button class="btn btn-info btn-block mt-2">Pay with PayPal</button>
-                            <button class="btn btn-dark btn-block mt-2">Buy with G Pay</button>
+                           
                         </div>
                     </div>
                 </div>
