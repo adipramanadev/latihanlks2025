@@ -6,11 +6,9 @@
             <span>Menu</span></a>
         <ul class="dropdown-menu">
             <li><a class="nav-link" href="{{ route('category.index') }}">Category</a></li>
-            <li><a class="nav-link" href="#">Product</a></li>
+            <li><a class="nav-link" href="{{ route('product.index') }}">Product</a></li>
 
         </ul>
     </li>
     <li><a class="nav-link" href="credits.html"><i class="fas fa-pencil-ruler"></i> <span>Credits</span></a></li>
 </ul>
-
-
