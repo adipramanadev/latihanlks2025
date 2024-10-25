@@ -7,6 +7,7 @@
         <ul class="dropdown-menu">
             <li><a class="nav-link" href="{{ route('category.index') }}">Category</a></li>
             <li><a class="nav-link" href="{{ route('product.index') }}">Product</a></li>
+            <li><a href="{{ route('order.index') }}" class="nav-link">Order</a></li>
 
         </ul>
     </li>
